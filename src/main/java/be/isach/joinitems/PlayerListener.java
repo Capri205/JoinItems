@@ -46,6 +46,8 @@ public class PlayerListener implements Listener {
      *
      * @param event
      */
+    
+    /* F451 - dont want any commands run
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerInteract(PlayerInteractEvent event) {
         Async.run(() -> {
@@ -60,7 +62,8 @@ public class PlayerListener implements Listener {
             }
         });
     }
-
+	*/
+    
     /**
      * Cancel moving JoinItem if disabled in config.
      *
@@ -99,6 +102,7 @@ public class PlayerListener implements Listener {
      *
      * @param event The BlockPlaceEvent.
      */
+    /* F451 - not required here. this is not a freaking protection plugin!
     @EventHandler
     public void onPlaceJoinItem(BlockPlaceEvent event) {
         if (event.getPlayer().getItemInHand() != null) {
@@ -108,7 +112,8 @@ public class PlayerListener implements Listener {
             }
         }
     }
-
+	*/
+    
     @EventHandler
     public void onDeath(EntityDeathEvent event) {
         if (!JoinItem.isDroppedOnDeath) {

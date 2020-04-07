@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -69,8 +70,21 @@ public class ItemsManager {
      * @param player The receiver of the items.
      */
     public static void giveJoinItems(Player player) {
-        JoinItem.joinItems.stream().filter(joinItem -> joinItem.isGivenOnJoin())
-                .forEach(joinItem1 -> player.getInventory().addItem(joinItem1.getItemStack()));
+        //JoinItem.joinItems.stream().filter(joinItem -> joinItem.isGivenOnJoin())
+        //        .forEach(joinItem1 -> player.getInventory().addItem(joinItem1.getItemStack()));
+    	
+    	JoinItem.joinItems.stream().filter(joinItem -> joinItem.isGivenOnJoin()).forEach(
+    			joinitem1 -> {
+    				switch(joinitem1.getSlot()) {
+    				case 39: player.getInventory().setChestplate(joinitem1.getItemStack());
+    				break;
+    				default: player.getInventory().setItem(joinitem1.getSlot(), joinitem1.getItemStack());
+    				break;
+    				}
+    			}
+    			
+    			);
+    	
     }
 
     /**
