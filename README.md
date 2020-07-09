@@ -6,7 +6,7 @@ Configure items to be added to a players inventory on joining a server or respaw
 
 Simple Join Items plugin.
 
-Made with Spigot 1.15.2.
+compiled with Spigot 1.16.
 
 Compiled with Java 8.
 
